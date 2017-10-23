@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
@@ -11,6 +12,12 @@ public class PlayerMovement : MonoBehaviour {
     public Vector3 xVector;
     public Vector3 yVector;
 
+    public GameObject bullet;
+    public Transform shotSpawn;
+    public float fireRate;
+
+    private float nextFire;
+
     // Use this for initialization
     void Start()
     {
@@ -18,7 +25,8 @@ public class PlayerMovement : MonoBehaviour {
         movingSpeed = (float) 0.1;
         xVector = new Vector3(movingSpeed, 0, 0);
         yVector = new Vector3(0, movingSpeed, 0);
-        //public var bullet : GameObject;
+
+        
 
     }
 
@@ -27,9 +35,9 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Space key pressed. You killed a peasant.");
-            //Instantiate(bullet)
+            Fire();
         }
-        
+
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             gameObject.transform.position -= xVector;
@@ -38,13 +46,21 @@ public class PlayerMovement : MonoBehaviour {
 	    {
 	        gameObject.transform.position += xVector;
 	    }
-        if (Input.GetKey((KeyCode.UpArrow)))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             gameObject.transform.position += yVector;
         }
-        if (Input.GetKey((KeyCode.DownArrow)))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
             gameObject.transform.position -= yVector;
         }
+    }
+
+    private void Fire()
+    {
+        nextFire = Time.time + fireRate;
+        Instantiate(bullet, shotSpawn.position, shotSpawn.rotation);
+
+        Debug.Log("Fire method");
     }
 }
