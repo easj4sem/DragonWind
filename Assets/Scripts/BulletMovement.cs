@@ -7,15 +7,15 @@ public class BulletMovement : MonoBehaviour
     public int lifespan;
     public Vector3 yVector;
 
-    //void OnCollisionEnter2D(Collision2D other)
-    //{
-    //    // maybe make an array with killable objects
-    //    Debug.Log("Collision", gameObject);
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        // maybe make an array with killable objects
+        Debug.Log("Collision", gameObject);
+        Destroy(other.gameObject);
 
-    //    Destroy(other.gameObject);
-    //}
+    }
 
-    //void OnTriggerEnter2D(Collider2D other)
+    //void OnTriggerEnter(Collider other)
     //{
     //    Debug.Log("Trigger", gameObject);
     //    Destroy(other.gameObject);

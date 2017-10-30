@@ -49,8 +49,6 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Fire()
     {
-
         Instantiate(bullet, shotSpawn.position, shotSpawn.rotation);
-        
     }
 }
