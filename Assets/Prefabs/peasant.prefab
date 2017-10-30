@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212977960932965784}
   - component: {fileID: 61489060102284538}
   - component: {fileID: 50872485741115144}
-  - component: {fileID: 114298265120458038}
   - component: {fileID: 114616708138425918}
   m_Layer: 0
   m_Name: peasant
@@ -89,17 +88,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.97, y: 1.08}
   m_EdgeRadius: 0
---- !u!114 &114298265120458038
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1972886432351664}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 271acf28d45a6ee4997216f2b535a20f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114616708138425918
 MonoBehaviour:
   m_ObjectHideFlags: 1
