@@ -7,7 +7,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     //private Rigidbody2D rigidbody2D;
-    public float jumpForce;
     public float movingSpeed;
     public Vector3 xVector;
     public Vector3 yVector;
@@ -23,7 +22,6 @@ public class PlayerMovement : MonoBehaviour {
         movingSpeed = (float) 0.1;
         xVector = new Vector3(movingSpeed, 0, 0);
         yVector = new Vector3(0, movingSpeed, 0);
-        
     }
 
     // Update is called once per frame
@@ -52,9 +50,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Fire()
     {
-
         Instantiate(bullet, shotSpawn.position, shotSpawn.rotation);
-
         AudioSource.PlayClipAtPoint(fireSound.clip, transform.position);
     }
 }

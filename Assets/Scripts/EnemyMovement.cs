@@ -9,12 +9,20 @@ public class EnemyMovement : MonoBehaviour
     private float movingSpeed;
     private int jumpCount;
 
+    public AudioSource HitSound;
+
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Trigger", gameObject);
         Destroy(this.gameObject);
-        Destroy(other.gameObject);
+        if (other.name != "Destroyer")
+        {
+            Destroy(other.gameObject);
+        }
+        
+        AudioSource.PlayClipAtPoint(HitSound.clip,transform.position);
     }
+
 
     // Use this for initialization
     void Start () {
@@ -22,7 +30,7 @@ public class EnemyMovement : MonoBehaviour
         xVector = new Vector3(movingSpeed, 0, 0);
         yVector = new Vector3(0, 1f, 0);
         jumpCount = 0;
-
+        HitSound = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
