@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayMusic : MonoBehaviour {
-
-    var MyAudio : AudioClip;
+public class SpawnEnemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	    AudioSource.PlayClipAtPoint(MyAudio(), transform.position);
+		
 	}
 	
 	// Update is called once per frame

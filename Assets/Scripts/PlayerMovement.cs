@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject bullet;
     public Transform shotSpawn;
 
+    public AudioSource fireSound;
+
     // Use this for initialization
     void Start()
     {
@@ -49,8 +51,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Fire()
     {
-
         Instantiate(bullet, shotSpawn.position, shotSpawn.rotation);
-        
+        AudioSource.PlayClipAtPoint(fireSound.clip, transform.position);
     }
 }
