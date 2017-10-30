@@ -9,6 +9,12 @@ public class EnemyMovement : MonoBehaviour
     private float movingSpeed;
     private int jumpCount;
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Trigger", gameObject);
+        Destroy(this.gameObject);
+        Destroy(other.gameObject);
+    }
 
     // Use this for initialization
     void Start () {
