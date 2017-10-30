@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-    private Rigidbody2D rigidbody2D;
+    //private Rigidbody2D rigidbody2D;
     public float jumpForce;
     public float movingSpeed;
     public Vector3 xVector;
@@ -14,30 +14,21 @@ public class PlayerMovement : MonoBehaviour {
 
     public GameObject bullet;
     public Transform shotSpawn;
-    public float fireRate;
-
-    private float nextFire;
 
     // Use this for initialization
     void Start()
     {
-        rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
         movingSpeed = (float) 0.1;
         xVector = new Vector3(movingSpeed, 0, 0);
         yVector = new Vector3(0, movingSpeed, 0);
-
-        
-
     }
 
     // Update is called once per frame
     void Update () {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Space key pressed. You killed a peasant.");
             Fire();
         }
-
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             gameObject.transform.position -= xVector;
@@ -58,9 +49,6 @@ public class PlayerMovement : MonoBehaviour {
 
     private void Fire()
     {
-        nextFire = Time.time + fireRate;
         Instantiate(bullet, shotSpawn.position, shotSpawn.rotation);
-
-        Debug.Log("Fire method");
     }
 }
