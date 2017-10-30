@@ -15,12 +15,15 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject bullet;
     public Transform shotSpawn;
 
+    public AudioSource fireSound;
+
     // Use this for initialization
     void Start()
     {
         movingSpeed = (float) 0.1;
         xVector = new Vector3(movingSpeed, 0, 0);
         yVector = new Vector3(0, movingSpeed, 0);
+        
     }
 
     // Update is called once per frame
@@ -51,6 +54,7 @@ public class PlayerMovement : MonoBehaviour {
     {
 
         Instantiate(bullet, shotSpawn.position, shotSpawn.rotation);
-        
+
+        AudioSource.PlayClipAtPoint(fireSound.clip, transform.position);
     }
 }
