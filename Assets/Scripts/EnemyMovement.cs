@@ -15,7 +15,11 @@ public class EnemyMovement : MonoBehaviour
     {
         Debug.Log("Trigger", gameObject);
         Destroy(this.gameObject);
-        Destroy(other.gameObject);
+        if (other.name != "Destroyer")
+        {
+            Destroy(other.gameObject);
+        }
+        
         AudioSource.PlayClipAtPoint(HitSound.clip,transform.position);
     }
 
