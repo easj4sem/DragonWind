@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: 0562aedf048244d47885567a010cd136
-timeCreated: 1509391147
+timeCreated: 1509711467
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Dragon_Flying_0
+    21300002: Dragon_Flying_1
+    21300004: Dragon_Flying_2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -86,6 +88,34 @@ TextureImporter:
         y: 608
         width: 188
         height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dragon_Flying_1
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 618
+        width: 185
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dragon_Flying_2
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 611
+        width: 183
+        height: 140
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
