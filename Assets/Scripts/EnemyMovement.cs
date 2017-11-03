@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class EnemyMovement : MonoBehaviour
     private int jumpCount;
 
     public AudioSource HitSound;
+    public int highScore;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,6 +20,8 @@ public class EnemyMovement : MonoBehaviour
         if (other.name != "Destroyer")
         {
             Destroy(other.gameObject);
+            highScore++;
+            GameObject.FindGameObjectWithTag("Score").GetComponent<Text>().text = "Score: " + highScore;
         }
         
         AudioSource.PlayClipAtPoint(HitSound.clip,transform.position);
